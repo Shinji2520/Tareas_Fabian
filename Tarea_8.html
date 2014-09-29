@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Repaso</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+	<style type="text/css">
+	.cuadros
+	{
+		width: 50px;
+		height: 50px;
+		float: left;
+		background: red;
+		margin-top: 10px;
+		margin-right: 10px;
+
+	}
+
+	</style>
+</head>
+
+<body>
+	<h1>Escribe un numero para crear cuadros dependindo el numero que escribas</h1>
+	<input type="text" name="numero" id="campo">
+	<input type="button" name="Crear" id="Crear" value="Crear" onClick="CrearNuevoDiv()">
+
+	<div id="contenedor"><h1>Da click a los cuadros para desaparecerlos</h1></div>
+
+	<script type="text/javascript">
+		var colores = ["#FF0000","#CCFF33","#0066FF","#9900FF","black"];
+
+
+	function CrearNuevoDiv()
+	{
+		var text="";
+		
+		usuario = document.getElementById("campo").value;
+		
+
+
+
+	for(i= 1; i<= usuario; i++){
+		
+		
+
+		jQuery('#contenedor').append('<div class = "cuadros" style="background:red"></div>')
+	  };
+
+	  $('.cuadros').click(function(env) {
+    
+    $('.cuadros').fadeOut(1000);
+  });
+
+	};
+
+
+	
+
+	</script>
+	</body>
+
+
+</html>
