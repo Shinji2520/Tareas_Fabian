@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Reloj</title>
+		<meta http-equiv="Content-Type"content="text/html; charset=UTF-8"/>
+		
+		<script type="text/javascript" charset="utf-8">
+			function mueveReloj(){
+				momentoActual = new Date() 
+				hora = momentoActual.getHours() 
+				minuto = momentoActual.getMinutes() 
+				segundo = momentoActual.getSeconds() 
+				
+					str_segundo = new String (segundo) 
+				   	if (str_segundo.length == 1) 
+				      	segundo = "0" + segundo 
+				
+				   	str_minuto = new String (minuto) 
+				   	if (str_minuto.length == 1) 
+				      	minuto = "0" + minuto 
+				
+				   	str_hora = new String (hora) 
+				   	if (str_hora.length == 1) 
+				      	hora = "0" + hora 
+				horaImprimible = hora + " : " + minuto + " : " + segundo 
+				document.form_reloj.reloj.value = horaImprimible 
+				setTimeout("mueveReloj()",1000) 
+
+			}	
+		</script>
+		
+		<script>
+		function cargarImagen(){
+		ahora=new Date();
+		hora=ahora.getHours();
+		if(hora<8){
+		imagen="diablo1.jpg";
+		}
+
+		if(hora>7 && hora<12){
+		imagen="diablo1.jpg";
+		}
+		if(hora>11 && hora<18){
+		imagen="diablo1.jpg";
+		}
+		if(hora>17 && hora<24){
+		imagen="diablo1.jpg";
+		}
+		document.images["reloj"].src=imagen;
+		}
+		</script>
+	</head>
+	<body onload="mueveReloj()"> 
+		<form name="form_reloj"> 
+			<input type="text" name="reloj" size="10" style="background-color : Black; color : White; font-family : Verdana, Arial, Helvetica; font-size : 8pt; text-align : center;" onfocus="window.document.form_reloj.reloj.blur()"> 
+		</form>
+		
+		<body onload="cargarImagen()">
+		<img src="diablo1.jpg" name="reloj"> 
+		
+	</body>
+</html>
